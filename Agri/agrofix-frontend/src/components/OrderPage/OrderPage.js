@@ -58,7 +58,7 @@ function OrderPage() {
         quantity,
         region
       };
-      const res = await axios.post('/api/orders', orderData, token ? { headers: { Authorization: `Bearer ${token}` } } : {});
+      const res = await axios.post('https://agrofix-2-czmk.onrender.com/api/orders', orderData, token ? { headers: { Authorization: `Bearer ${token}` } } : {});
       setTrackingId(res.data.id);
       setShowModal(true);
       dispatch({ type: 'CLEAR_CART' });
