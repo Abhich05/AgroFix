@@ -38,9 +38,10 @@ function CataloguePage() {
     setShowSnackbar(true);
     setTimeout(() => setShowSnackbar(false), 1500);
   };
-  console.log("Products state in CataloguePage:", products);
+  console.log("Products state in CataloguePage:", products, "Type:", typeof products);
   return (
     <Box className="catalogue-main-pro" sx={{ px: { xs: 1, sm: 2, md: 4 }, py: 3, maxWidth: '1200px', margin: '0 auto' }}>
+      <pre style={{background:'#eee',padding:'8px',borderRadius:'4px',marginBottom:'16px'}}>{JSON.stringify(products)}</pre>
       <div className="catalogue-header-row-pro">
         <Typography variant="h4" align="left" sx={{ color: '#245c2a', fontWeight: 800, mb: 2, letterSpacing: 1.5, fontSize: { xs: 24, sm: 32 }, textShadow: '0 1px 4px #e8f5e9' }}>
           {t('fresh_produce_catalogue') || 'Fresh produce catalogue'}
@@ -54,7 +55,7 @@ function CataloguePage() {
         </div>
       </div>
       <Grid container spacing={3} className="catalogue-list-pro">
-        {(Array.isArray(products) ? products : []).map((p) => (
+        {Array.isArray(products) && products.map((p) => (
           <Grid item xs={12} sm={6} md={4} lg={3} key={p.id}>
             <Card className={`catalogue-card-pro${addedId===p.id && showSnackbar ? ' catalogue-card-added-pro' : ''}`} elevation={4}>
               <div className="catalogue-img-pro">
@@ -84,7 +85,7 @@ function CataloguePage() {
         ))}
       </Grid>
       {!Array.isArray(products) && (
-        <Typography color="error">Failed to load products. Please refresh or try again later.</Typography>
+        <Typography color="error">Products is not an array. Type: {typeof products}. Value: {JSON.stringify(products)}</Typography>
       )}
       {showSnackbar && (
         <div className="catalogue-snackbar-pro">
