@@ -22,7 +22,7 @@ function CataloguePage() {
   const [addedId, setAddedId] = useState(null);
   const [showSnackbar, setShowSnackbar] = useState(false);
   useEffect(() => {
-    axios.get('/api/products')
+    axios.get('https://agrofix-2-czmk.onrender.com/api/products')
       .then(res => setProducts(res.data))
       .catch(() => setProducts(DUMMY_PRODUCTS));
   }, []);
