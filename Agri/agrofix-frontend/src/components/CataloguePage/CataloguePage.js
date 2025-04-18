@@ -41,7 +41,6 @@ function CataloguePage() {
   console.log("Products state in CataloguePage:", products, "Type:", typeof products);
   return (
     <Box className="catalogue-main-pro" sx={{ px: { xs: 1, sm: 2, md: 4 }, py: 3, maxWidth: '1200px', margin: '0 auto' }}>
-      <pre style={{background:'#eee',padding:'8px',borderRadius:'4px',marginBottom:'16px'}}>{JSON.stringify(products)}</pre>
       <div className="catalogue-header-row-pro">
         <Typography variant="h4" align="left" sx={{ color: '#245c2a', fontWeight: 800, mb: 2, letterSpacing: 1.5, fontSize: { xs: 24, sm: 32 }, textShadow: '0 1px 4px #e8f5e9' }}>
           {t('fresh_produce_catalogue') || 'Fresh produce catalogue'}
