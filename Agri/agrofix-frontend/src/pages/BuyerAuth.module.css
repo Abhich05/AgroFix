@@ -47,16 +47,32 @@
   background: linear-gradient(90deg, #43a047 0%, #388e3c 100%);
   color: #fff;
   border: none;
-  border-radius: 8px;
-  padding: 12px 0;
-  font-size: 1.1rem;
-  font-weight: 700;
+  border-radius: 12px;
+  padding: 16px 0;
+  font-size: 1.13rem;
+  font-weight: 900;
   cursor: pointer;
   margin-top: 8px;
-  transition: background 0.2s;
+  transition: background 0.18s, box-shadow 0.18s, opacity 0.18s;
+  box-shadow: 0 4px 16px #a5d6a7aa;
+  outline: none;
+  min-width: 44px;
+  min-height: 44px;
 }
 .buyer-auth-btn:hover {
   background: linear-gradient(90deg, #388e3c 0%, #43a047 100%);
+  box-shadow: 0 6px 24px #a5d6a7cc;
+  opacity: 0.95;
+}
+.buyer-auth-btn:focus {
+  outline: 2px solid #245c2a;
+  outline-offset: 2px;
+}
+.buyer-auth-btn[disabled] {
+  background: #c8e6c9 !important;
+  color: #388e3c !important;
+  opacity: 0.7;
+  cursor: not-allowed;
 }
 .buyer-auth-link {
   text-align: center;
@@ -66,4 +82,16 @@
 .buyer-auth-link a {
   color: #388e3c;
   text-decoration: underline;
+}
+@media (max-width: 600px) {
+  .buyer-auth-btn {
+    font-size: 1rem;
+    padding: 13px 0;
+    min-width: 44px;
+    min-height: 44px;
+  }
+  .buyer-auth-main {
+    padding-left: 2vw !important;
+    padding-right: 2vw !important;
+  }
 }
