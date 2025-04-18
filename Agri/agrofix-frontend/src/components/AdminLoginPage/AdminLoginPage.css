@@ -1,0 +1,67 @@
+/* AdminLoginPage - Farmer Friendly Styles */
+.admin-login-main {
+  max-width: 400px;
+  margin: 40px auto;
+  background: #fffbe7;
+  padding: 32px 20px 24px 20px;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px #e0e0e0;
+}
+.admin-login-title {
+  text-align: center;
+  color: #388e3c;
+  font-size: 2.1rem;
+  font-weight: 900;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+.admin-login-form label {
+  display: block;
+  font-size: 1.14rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #2e7d32;
+  letter-spacing: 0.5px;
+}
+.admin-login-form input {
+  width: 100%;
+  padding: 14px 14px;
+  border-radius: 10px;
+  border: 1.5px solid #c8e6c9;
+  margin-top: 4px;
+  margin-bottom: 18px;
+  font-size: 1.07rem;
+  background: #f9fbe7;
+  outline: none;
+  transition: border 0.2s;
+}
+.admin-login-form input:focus {
+  border: 2px solid #388e3c;
+}
+.btn-primary {
+  width: 100%;
+  background: linear-gradient(90deg, #4caf50 0%, #66bb6a 100%);
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight: 900;
+  border-radius: 12px;
+  border: none;
+  padding: 16px 0;
+  margin-top: 8px;
+  margin-bottom: 4px;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 16px #a5d6a7aa;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.btn-primary:hover {
+  background: linear-gradient(90deg, #388e3c 0%, #43a047 100%);
+  box-shadow: 0 6px 24px #a5d6a7cc;
+}
+.admin-login-error {
+  color: #b71c1c;
+  font-weight: 700;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 1.07rem;
+}

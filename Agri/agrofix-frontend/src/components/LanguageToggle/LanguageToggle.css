@@ -1,0 +1,23 @@
+/* LanguageToggle - Farmer Friendly Styles */
+.language-toggle {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 10px 0;
+}
+.language-btn {
+  background: #388e3c;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  padding: 4px 16px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.language-btn.active {
+  background: #fff;
+  color: #388e3c;
+  border: 1px solid #388e3c;
+}
