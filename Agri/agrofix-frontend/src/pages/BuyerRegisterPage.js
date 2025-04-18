@@ -24,7 +24,7 @@ export default function BuyerRegisterPage() {
   const onSubmit = async (form) => {
     setError('');
     try {
-      await axios.post('/api/buyers/register', form);
+      await axios.post('https://agrofix-2-czmk.onrender.com/api/buyers/register', form);
       reset();
       navigate('/buyer-login');
     } catch (err) {

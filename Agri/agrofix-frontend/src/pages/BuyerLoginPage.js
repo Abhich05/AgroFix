@@ -22,7 +22,7 @@ export default function BuyerLoginPage() {
   const onSubmit = async (form) => {
     setError('');
     try {
-      const res = await axios.post('/api/buyers/login', form);
+      const res = await axios.post('https://agrofix-2-czmk.onrender.com/api/buyers/login', form);
       localStorage.setItem('buyerToken', res.data.token);
       reset();
       navigate('/'); // Go to home or buyer dashboard
