@@ -23,7 +23,13 @@ function CataloguePage() {
   const [showSnackbar, setShowSnackbar] = useState(false);
   useEffect(() => {
     axios.get('https://agrofix-2-czmk.onrender.com/api/products')
-      .then(res => setProducts(res.data))
+      .then(res => {
+        if (Array.isArray(res.data)) {
+          setProducts(res.data);
+        } else {
+          setProducts(DUMMY_PRODUCTS);
+        }
+      })
       .catch(() => setProducts(DUMMY_PRODUCTS));
   }, []);
   const handleAddToCart = (product) => {
@@ -32,6 +38,7 @@ function CataloguePage() {
     setShowSnackbar(true);
     setTimeout(() => setShowSnackbar(false), 1500);
   };
+  console.log("Products state in CataloguePage:", products);
   return (
     <Box className="catalogue-main-pro" sx={{ px: { xs: 1, sm: 2, md: 4 }, py: 3, maxWidth: '1200px', margin: '0 auto' }}>
       <div className="catalogue-header-row-pro">
@@ -47,7 +54,7 @@ function CataloguePage() {
         </div>
       </div>
       <Grid container spacing={3} className="catalogue-list-pro">
-        {products.map((p) => (
+        {(Array.isArray(products) ? products : []).map((p) => (
           <Grid item xs={12} sm={6} md={4} lg={3} key={p.id}>
             <Card className={`catalogue-card-pro${addedId===p.id && showSnackbar ? ' catalogue-card-added-pro' : ''}`} elevation={4}>
               <div className="catalogue-img-pro">
@@ -76,6 +83,9 @@ function CataloguePage() {
           </Grid>
         ))}
       </Grid>
+      {!Array.isArray(products) && (
+        <Typography color="error">Failed to load products. Please refresh or try again later.</Typography>
+      )}
       {showSnackbar && (
         <div className="catalogue-snackbar-pro">
           {t('added_to_basket') || 'Added to basket!'}
