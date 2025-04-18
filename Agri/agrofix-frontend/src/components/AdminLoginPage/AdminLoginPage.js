@@ -24,7 +24,7 @@ function AdminLoginPage() {
     setError('');
     if (role === 'admin') {
       try {
-        const res = await axios.post('/api/admin/login', form);
+        const res = await axios.post('https://agrofix-2-czmk.onrender.com/api/admin/login', form);
         localStorage.setItem('adminToken', res.data.token);
         reset();
         navigate('/admin');
@@ -33,7 +33,7 @@ function AdminLoginPage() {
       }
     } else {
       try {
-        const res = await axios.post('/api/buyers/login', form);
+        const res = await axios.post('https://agrofix-2-czmk.onrender.com/api/buyers/login', form);
         localStorage.setItem('buyerToken', res.data.token);
         reset();
         navigate('/buyer-dashboard');
