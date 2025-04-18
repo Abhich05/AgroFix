@@ -64,7 +64,7 @@ function TrackOrderPage() {
   const [snackbar, setSnackbar] = useState({ open: false, msg: '', severity: 'error' });
   const handleTrack = async () => {
     try {
-      const res = await axios.get(`/api/orders/${orderId}`);
+      const res = await axios.get(`https://agrofix-2-czmk.onrender.com/api/orders/${orderId}`);
       setOrder(res.data);
       setError('');
       setSnackbar({ open: true, msg: t('orderFound') || 'Order found', severity: 'success' });

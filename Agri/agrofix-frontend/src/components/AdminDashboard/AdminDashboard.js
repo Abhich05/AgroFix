@@ -26,7 +26,7 @@ function AdminDashboard() {
     }
     setToken(tkn);
     const fetchData = () => {
-      axios.get('/api/products', { headers: { Authorization: `Bearer ${tkn}` } })
+      axios.get('https://agrofix-2-czmk.onrender.com/api/products', { headers: { Authorization: `Bearer ${tkn}` } })
         .then(res => setInventory(res.data))
         .catch(() => setInventory([
           { id: 1, name: 'Tomato', price: 25, stock: 120, description: 'Fresh farm tomatoes', imageUrl: 'https://img.icons8.com/color/96/tomato.png' },
@@ -34,13 +34,13 @@ function AdminDashboard() {
           { id: 3, name: 'Carrot', price: 30, stock: 150, description: 'Crunchy carrots', imageUrl: 'https://img.icons8.com/color/96/carrot.png' },
           { id: 4, name: 'Apple', price: 80, stock: 90, description: 'Juicy apples', imageUrl: 'https://img.icons8.com/color/96/apple.png' }
         ]));
-      axios.get('/api/orders', { headers: { Authorization: `Bearer ${tkn}` } })
+      axios.get('https://agrofix-2-czmk.onrender.com/api/orders', { headers: { Authorization: `Bearer ${tkn}` } })
         .then(res => setOrders(res.data))
         .catch(() => setOrders([
           { id: 1, buyer_name: 'Ravi', buyer_contact: '9999999999', delivery_address: '123 Main St', items: [{ name: 'Tomato', quantity: 2 }], status: 'pending' },
           { id: 2, buyer_name: 'Priya', buyer_contact: '8888888888', delivery_address: '456 Side Rd', items: [{ name: 'Potato', quantity: 5 }], status: 'delivered' }
         ]));
-      axios.get('/api/admin/dashboard', { headers: { Authorization: `Bearer ${tkn}` } })
+      axios.get('https://agrofix-2-czmk.onrender.com/api/admin/dashboard', { headers: { Authorization: `Bearer ${tkn}` } })
         .then(res => setAnalytics(res.data))
         .catch(() => setAnalytics({ totalProducts: 4, totalOrders: 2 }));
     };
@@ -52,7 +52,7 @@ function AdminDashboard() {
   // Add inventory
   const addInventory = async (item) => {
     try {
-      const res = await axios.post('/api/products', item, { headers: { Authorization: `Bearer ${token}` } });
+      const res = await axios.post('https://agrofix-2-czmk.onrender.com/api/products', item, { headers: { Authorization: `Bearer ${token}` } });
       setInventory([...inventory, res.data]);
       setSnackbar({ open: true, msg: t('productAdded') || 'Product added', severity: 'success' });
     } catch {
@@ -63,7 +63,7 @@ function AdminDashboard() {
   // Edit inventory
   const editInventory = async (id, item) => {
     try {
-      const res = await axios.put(`/api/products/${id}`, item, { headers: { Authorization: `Bearer ${token}` } });
+      const res = await axios.put(`https://agrofix-2-czmk.onrender.com/api/products/${id}`, item, { headers: { Authorization: `Bearer ${token}` } });
       setInventory(inventory.map(p => (p.id === id ? res.data : p)));
       setSnackbar({ open: true, msg: t('productUpdated') || 'Product updated', severity: 'success' });
     } catch {
@@ -74,7 +74,7 @@ function AdminDashboard() {
   // Delete inventory
   const deleteInventory = async (id) => {
     try {
-      await axios.delete(`/api/products/${id}`, { headers: { Authorization: `Bearer ${token}` } });
+      await axios.delete(`https://agrofix-2-czmk.onrender.com/api/products/${id}`, { headers: { Authorization: `Bearer ${token}` } });
       setInventory(inventory.filter(p => p.id !== id));
       setSnackbar({ open: true, msg: t('productDeleted') || 'Product deleted', severity: 'success' });
     } catch {
@@ -85,7 +85,7 @@ function AdminDashboard() {
   // Update order status
   const updateOrderStatus = async (orderId, status) => {
     try {
-      await axios.put(`/api/orders/${orderId}`, { status }, { headers: { Authorization: `Bearer ${token}` } });
+      await axios.put(`https://agrofix-2-czmk.onrender.com/api/orders/${orderId}`, { status }, { headers: { Authorization: `Bearer ${token}` } });
       setOrders(orders => orders.map(o => o.id === orderId ? { ...o, status } : o));
       setSnackbar({ open: true, msg: t('orderStatusUpdated') || 'Order status updated', severity: 'success' });
     } catch {
