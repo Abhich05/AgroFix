@@ -1,0 +1,16 @@
+{
+  "short_name": "Agrofix",
+  "name": "Agrofix E-commerce Platform",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#388e3c",
+  "background_color": "#ffffff",
+  "description": "Buy, track, and manage agri-products with smart features."
+}

@@ -1,0 +1,183 @@
+/* AdminDashboard - Farmer Friendly Styles */
+:root {
+  --primary-green: #388e3c;
+  --primary-green-light: #4caf50;
+  --primary-green-lighter: #66bb6a;
+  --accent-orange: #f57c00;
+  --light-bg: #fffbe7;
+  --card-shadow: 0 2px 12px #e0e0e0;
+  --card-shadow-hover: 0 6px 24px #a5d6a7cc;
+}
+.admin-dashboard-main {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 32px 16px 24px 16px;
+}
+.admin-section {
+  background: var(--light-bg);
+  border-radius: 18px;
+  box-shadow: var(--card-shadow);
+  padding: 26px 20px 20px 20px;
+  margin-bottom: 32px;
+}
+.admin-section-title {
+  color: var(--primary-green);
+  font-size: 1.7rem;
+  font-weight: 900;
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+}
+.admin-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 8px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+}
+.admin-table th {
+  background: #e8f5e9;
+  color: var(--primary-green);
+  font-weight: 800;
+  padding: 14px 12px;
+  border-radius: 8px 8px 0 0;
+  font-size: 1.07rem;
+}
+.admin-table tr {
+  background: var(--light-bg);
+  border-radius: 8px;
+  transition: box-shadow 0.2s;
+}
+.admin-table tr:hover {
+  box-shadow: 0 2px 10px #a5d6a7aa;
+}
+.admin-table td {
+  padding: 12px 10px;
+  font-size: 1.05rem;
+  vertical-align: top;
+}
+.admin-status {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 800;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 1.01rem;
+  letter-spacing: 0.5px;
+  background: #e8f5e9;
+  margin-bottom: 0;
+}
+.status-pending {
+  background: #fffde7;
+  color: #fbc02d;
+  border: 1.5px solid #fbc02d;
+}
+.status-in_progress {
+  background: #e3f2fd;
+  color: #0288d1;
+  border: 1.5px solid #0288d1;
+}
+.status-delivered {
+  background: #e8f5e9;
+  color: #388e3c;
+  border: 1.5px solid #388e3c;
+}
+.status-cancelled {
+  background: #ffebee;
+  color: #b71c1c;
+  border: 1.5px solid #b71c1c;
+}
+.admin-table td ul {
+  margin: 0;
+  padding-left: 14px;
+}
+.admin-table td li {
+  margin-bottom: 2px;
+  font-size: 0.98rem;
+  color: #333;
+}
+.admin-table button {
+  font-size: 0.98rem;
+  border-radius: 8px;
+  font-weight: 700;
+  padding: 7px 15px;
+  margin-bottom: 2px;
+  box-shadow: 0 1px 4px #a5d6a7aa;
+  transition: background 0.2s;
+}
+.admin-table button[variant="contained"] {
+  background: #388e3c;
+  color: #fff;
+}
+.admin-table button[variant="contained"]:hover {
+  background: #0288d1;
+}
+.admin-action-btn {
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin-right: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px #e0e0e0;
+}
+.admin-action-edit { background: #e3f2fd; color: #0288d1; }
+.admin-action-edit:hover { background: #bbdefb; }
+.admin-action-delete { background: #ffebee; color: #b71c1c; }
+.admin-action-delete:hover { background: #ffcdd2; }
+.admin-action-add { background: linear-gradient(90deg, var(--primary-green-light) 0%, var(--primary-green-lighter) 100%); color: #fff; }
+.admin-action-add:hover { background: linear-gradient(90deg, var(--primary-green) 0%, #43a047 100%); }
+.admin-form label {
+  font-size: 1.07rem;
+  font-weight: 700;
+  color: #2e7d32;
+  margin-bottom: 7px;
+  display: block;
+}
+.admin-form input, .admin-form select {
+  width: 100%;
+  padding: 12px 10px;
+  border-radius: 8px;
+  border: 1.5px solid #c8e6c9;
+  font-size: 1.03rem;
+  background: #f9fbe7;
+  margin-bottom: 12px;
+  transition: border 0.2s;
+}
+.admin-form input:focus, .admin-form select:focus {
+  border: 2px solid var(--primary-green);
+}
+.admin-form input.error, .admin-form select.error {
+  border: 2px solid #b71c1c;
+}
+.admin-form-error {
+  color: #b71c1c;
+  font-size: 1.01rem;
+  margin-bottom: 8px;
+}
+@media (max-width: 900px) {
+  .admin-dashboard-main {
+    padding: 8px 2px 12px 2px;
+  }
+  .admin-section {
+    padding: 12px 5px 10px 5px;
+  }
+  .admin-section-title {
+    font-size: 1.15rem;
+  }
+  .admin-table th, .admin-table td {
+    font-size: 0.95rem;
+    padding: 8px 4px;
+  }
+}
+@media (max-width: 600px) {
+  .admin-table th, .admin-table td {
+    font-size: 0.95rem;
+    padding: 8px 4px;
+  }
+  .admin-section-title {
+    font-size: 1rem;
+  }
+}

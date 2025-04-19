@@ -1,0 +1,22 @@
+.app-flex-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f6fbf4;
+}
+.app-flex-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+/* Optional: Add a little margin above the footer for separation */
+.footer {
+  margin-top: 24px;
+}
+
+/* Remove any default body padding/margin that could cause space below footer */
+body, #root, .App {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #f6fbf4;
+}

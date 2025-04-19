@@ -1,0 +1,105 @@
+/* NavBar - Farmer Friendly Styles */
+.navbar {
+  background: linear-gradient(90deg, #388e3c 60%, #a8e063 100%);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 16px 0 10px 0;
+  border-radius: 0 0 22px 22px;
+  box-shadow: 0 4px 24px #a8e06355;
+  position: sticky;
+  top: 0;
+  z-index: 110;
+  min-height: 70px;
+}
+.navbar-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.18rem;
+  font-weight: 800;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: color 0.2s, transform 0.2s;
+  position: relative;
+  letter-spacing: 1px;
+  border-radius: 12px;
+  padding: 6px 12px;
+}
+.navbar-btn.active, .navbar-btn:focus {
+  color: #fbc02d;
+  background: #fffde7;
+  box-shadow: 0 2px 10px #fbc02d55;
+  transform: scale(1.07);
+}
+.navbar-btn .navbar-icon {
+  font-size: 2.2rem !important;
+  margin-bottom: 2px;
+  filter: drop-shadow(0 2px 4px #a8e06366);
+}
+.navbar-cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -12px;
+  background: #fff;
+  color: #388e3c;
+  border-radius: 50%;
+  font-size: 1.05rem;
+  min-width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  box-shadow: 0 2px 6px #c8e6c9;
+}
+@media (max-width: 700px) {
+  .navbar {
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px 0 8px 0;
+    min-height: 56px;
+  }
+  .navbar-btn {
+    font-size: 1rem;
+    padding: 4px 8px;
+  }
+  .navbar-btn .navbar-icon {
+    font-size: 1.4rem !important;
+  }
+}
+@media (max-width: 800px) {
+  .MuiAppBar-root {
+    border-radius: 0 0 14px 14px !important;
+    min-height: 56px !important;
+  }
+  .MuiToolbar-root {
+    min-height: 56px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .MuiIconButton-root {
+    margin: 0 4px !important;
+  }
+  .MuiTypography-h6 {
+    font-size: 1.15rem !important;
+    letter-spacing: 0.5px !important;
+  }
+  .MuiDrawer-paper {
+    border-radius: 0 12px 12px 0 !important;
+    background: #f7faf7 !important;
+  }
+  .MuiListItem-root {
+    border-radius: 8px !important;
+    margin: 3px 0 !important;
+  }
+}
+@media (max-width: 480px) {
+  .MuiTypography-h6 {
+    font-size: 0.97rem !important;
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+}
